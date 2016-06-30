@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+<!DOCTYPE modification [
+]>
+<modification>
+    <!-- product page hooks -->
+    <file name="catalog/view/theme/default/template/product/product.tpl">
+        <!-- tab headers -->
+		<operation>
+			<search position="after"><![CDATA[
+			    <ul class="nav nav-tabs">
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm tab header start -->
+			]]></add>
+		</operation>
+
+        <operation>
+			<search position="before" index="2"><![CDATA[
+			    </ul>
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm tab header end -->
+			]]></add>
+		</operation>
+
+        <!-- tab content -->
+        <operation>
+			<search position="after"><![CDATA[
+			    <div class="tab-content">
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm tab content start -->
+			]]></add>
+		</operation>
+
+        <!-- product info blocks -->
+        <operation>
+			<search position="before" offset="1" index="1"><![CDATA[
+			    <div class="rating">
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm attributes end -->
+			]]></add>
+		</operation>
+	</file>
+
+    <!-- login / menu hooks -->
+	<file name="catalog/view/theme/default/template/account/login.tpl">
+		<operation error="log">
+			<search position="after"><![CDATA[
+				<a href="<?php echo $register; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm register form end -->
+			]]></add>
+		</operation>
+	</file>
+
+    <!-- seller account menu in header -->
+	<file name="catalog/view/theme/default/template/common/header.tpl">
+		<operation error="log">
+			<search position="after" offset="1"><![CDATA[
+				<div id="top-links" class="nav pull-right">
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm header menu start -->
+			]]></add>
+		</operation>
+
+        <operation error="log">
+			<search position="after"><![CDATA[
+				<li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_checkout; ?></span></a></li>
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm header menu end -->
+			]]></add>
+		</operation>
+	</file>
+
+	<!-- account area menu -->
+	<file name="catalog/view/theme/default/template/account/account.tpl">
+		<operation error="skip">
+			<search position="before"><![CDATA[
+			    <h2><?php echo $text_my_account; ?></h2>
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm account menu start -->
+			]]></add>
+		</operation>
+
+		<operation error="skip">
+			<search position="before"><![CDATA[
+			    <h2><?php echo $text_my_orders; ?></h2>
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm account menu orders start -->
+			]]></add>
+		</operation>
+
+		<operation error="log">
+			<search position="before"><![CDATA[
+			    <h2><?php echo $text_my_newsletter; ?></h2>
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm account menu newsletter start -->
+			]]></add>
+		</operation>
+
+		<operation error="skip">
+			<search position="before"><![CDATA[
+			    <?php echo $content_bottom; ?>
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm account menu end -->
+			]]></add>
+		</operation>
+	</file>
+
+	<!-- account sidebar menu -->
+	<file name="catalog/view/theme/default/template/module/account.tpl">
+		<operation error="log">
+			<search position="after"><![CDATA[
+				<div class="list-group">
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm account sidebar menu start -->
+			]]></add>
+		</operation>
+
+		<operation error="log">
+			<search position="after" index="1"><![CDATA[
+			    </div>
+			]]></search>
+			<add><![CDATA[
+			    <!-- mm account sidebar menu end -->
+			]]></add>
+		</operation>
+	</file>
+</modification>
